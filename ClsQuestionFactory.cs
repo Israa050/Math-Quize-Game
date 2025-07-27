@@ -16,7 +16,7 @@ namespace Math_Game
             int correctAnswer = CalculateAnswer(operand1, operand2, opType,opSymbol);
             string questionText = $"{operand1} {opSymbol} {operand2}";
 
-           return CreateQuestionByKind(kind, questionText, correctAnswer);
+           return CreateQuestionByKind(kind, questionText, correctAnswer,level);
         }
 
         private static (int, int) GenerateOperands(enGameLevel level, enOperationType opType)
@@ -103,13 +103,13 @@ namespace Math_Game
 
         }
 
-        private static ClsBaseQuestion CreateQuestionByKind(enQuestionType questionType,string question, int correctAnswer)
+        private static ClsBaseQuestion CreateQuestionByKind(enQuestionType questionType, string question, int correctAnswer, enGameLevel level)
         {
 
             switch (questionType)
             {
                 case enQuestionType.MultipleChoice:
-                    List<Choice> choices = ClsMultipleChoiceQuestion.GenerateChoices(correctAnswer);
+                    List<Choice> choices = ClsMultipleChoiceQuestion.GenerateChoices(correctAnswer,level: level);
                     choices[0].IsSelected = true;
                     return new ClsMultipleChoiceQuestion(question, choices,correctAnswer);
 

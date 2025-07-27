@@ -32,8 +32,28 @@ namespace Math_Game
             return new Choice(candidate, false, false); // always false here
         }
 
-        public static List<Choice> GenerateChoices(int correctAnswer, int rangeMin = -100, int rangeMax = 100)
+        private static void GetMaxAndMinValues(int correctAnswer,enGameLevel level,ref int max, ref int min)
         {
+            switch (level)
+            {
+                case enGameLevel.Easy:
+                    min = correctAnswer++;
+                    max = min + 5;
+                    break;
+                case enGameLevel.Medium:
+                    min = correctAnswer++;
+                    max = min + 10;
+                    break;
+                case enGameLevel.Hard:
+                    min = correctAnswer++;
+                    max = min + 20;
+                    break;
+            }
+        }
+
+        public static List<Choice> GenerateChoices(int correctAnswer, enGameLevel level, int rangeMin = -100, int rangeMax = 100)
+        {
+            GetMaxAndMinValues(correctAnswer,level,ref rangeMax, ref rangeMin);
             HashSet<int> usedValues = new HashSet<int> { correctAnswer };
             List<Choice> choices = new List<Choice>();
 
