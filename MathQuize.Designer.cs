@@ -30,6 +30,7 @@ namespace Math_Game
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MathQuize));
             this.label1 = new System.Windows.Forms.Label();
             this.gbLevel = new System.Windows.Forms.GroupBox();
             this.rdbHard = new System.Windows.Forms.RadioButton();
@@ -356,6 +357,7 @@ namespace Math_Game
             this.Controls.Add(this.gbOperation);
             this.Controls.Add(this.gbLevel);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MathQuize";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

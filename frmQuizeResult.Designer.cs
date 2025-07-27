@@ -29,6 +29,7 @@ namespace Math_Game
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuizeResult));
             this.label = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
@@ -317,6 +318,7 @@ namespace Math_Game
             this.Controls.Add(this.btnExist);
             this.Controls.Add(this.btnPlayAgain);
             this.Controls.Add(this.label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmQuizeResult";
             this.Text = "frmQuizeResult";
             this.Load += new System.EventHandler(this.frmQuizeResult_Load);
