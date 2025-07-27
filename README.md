@@ -51,7 +51,7 @@ This Windows Forms application challenges learners with various math questions a
 ### How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/math-quiz-game.git
+   git clone https://github.com/Israa050/Math-Quize-Game.git
 2. Open the solution file in Visual Studio.
 3. Build and run the project.
 
